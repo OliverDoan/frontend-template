@@ -1,14 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home, NotFound } from './pages';
+import { Layout } from './hoc/layout';
+import { Home, Login, NotFound } from './pages';
 function App() {
   return (
     <>
-      <Routes>
-        <Route element={<Home />}>
+      <Layout>
+        <Routes>
           <Route path='/' element={<Home />} />
-        </Route>
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Layout>
     </>
   );
 }
